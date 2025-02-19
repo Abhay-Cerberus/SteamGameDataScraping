@@ -1,5 +1,5 @@
 # SteamGameDataScraping
-This is a repo where the scraped data from steam api and gamalytics api (for sales estimate) is stored
+This is a repo where the scraped data from steam api and gamalytics api (for sales estimate) is stored<br/>
 The Files only contain Data till january 2025
 ------------------------------------------------------------------------------------------------------------
 ------------------------------------------------------------------------------------------------------------
