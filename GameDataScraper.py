@@ -42,7 +42,6 @@ def get_app_details(appid, max_retries=MAX_RETRIES):
 def extract_base_game_details(details):
     """
     Extracts details for a base game.
-    Returns a dictionary with the desired fields and a default 'dlcs' value (0).
     """
     return {
         "steam_appid": details.get("steam_appid", "N/A"),
@@ -57,7 +56,6 @@ def extract_base_game_details(details):
         "genres": ", ".join([g.get("description", "").strip() for g in details.get("genres", [])]) if details.get("genres") else "N/A",
         "achievements_total": details.get("achievements", {}).get("total", "N/A"),
         "release_date": details.get("release_date", {}).get("date", "N/A"),
-        "dlcs": 0  # Base games start with 0 DLCs; note: without in‑memory aggregation, this value will remain 0.
     }
 
 def append_to_csv(record, filename, headers):
@@ -96,7 +94,7 @@ def main():
     # Define headers for each CSV file.
     base_headers = ["steam_appid", "name", "windows", "mac", "linux", "metacritic",
                     "steam_achievements", "steam_trading_cards", "workshop_support",
-                    "genres", "achievements_total", "release_date", "dlcs"]
+                    "genres", "achievements_total", "release_date"]
     dlc_headers = ["dlc_appid", "base_appid", "name"]
     demo_headers = ["demo_appid", "full_game_appid", "name"]
 
