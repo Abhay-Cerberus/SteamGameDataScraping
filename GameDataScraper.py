@@ -87,10 +87,9 @@ def log_processed_appid(appid):
 def main():
     # Read the list of appids from a CSV file (e.g., "my_appids.csv").
     # The CSV file must have a column named "appid".
-    # file_name = input("Enter file name (without .csv): ")
-    # file_name = "AllGames"
-    # df = read_csv(file_name + ".csv")
-    appids = [2054150,2054170,1335700,1335740,1863540,1761730,1061400,3302670,1061400,1501700,] # .tolist()
+    file_name = input("Enter file name (without .csv): ")
+    df = read_csv(file_name + ".csv")
+    appids = df["appid"].tolist()
     total_apps = len(appids)
     print(f"Processing {total_apps} app(s)...")
 
